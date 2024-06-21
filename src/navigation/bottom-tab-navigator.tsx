@@ -10,7 +10,9 @@ const {Navigator, Screen} =
 
 const TabNavigator = () => {
   return (
-    <Navigator screenOptions={{headerShown: false}}>
+    <Navigator
+      screenOptions={{headerShown: false, unmountOnBlur: true}}
+      detachInactiveScreens>
       <Screen name={screens.IP_TRACKER_STACK} component={StackNavigator} />
       <Screen name={screens.MARKET_DATA} component={MarketDataScreen} />
     </Navigator>
