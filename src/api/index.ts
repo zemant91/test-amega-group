@@ -1,10 +1,10 @@
-const getCurrentUserIP = async (ip: string = "") => {
+const getCurrentUserIP = async (ip: string = '') => {
   try {
     const response = await fetch(`https://ipwho.is/${ip}`);
     return await response.json();
   } catch (error) {
-    return(error);
+    return error;
   }
-}
+};
 
-export { getCurrentUserIP };
+export {getCurrentUserIP};

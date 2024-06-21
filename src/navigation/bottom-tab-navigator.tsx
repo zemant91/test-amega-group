@@ -2,10 +2,11 @@ import React from 'react';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import StackNavigator from './stack-navigator';
 import {MarketDataScreen} from '../screens';
-import screens from "../constants/navigation";
-import {RootBottomTabNavigatorParamList} from "../types/navigation";
+import screens from '../constants/navigation';
+import {RootBottomTabNavigatorParamList} from '../types/navigation';
 
-const {Navigator, Screen} = createBottomTabNavigator<RootBottomTabNavigatorParamList>();
+const {Navigator, Screen} =
+  createBottomTabNavigator<RootBottomTabNavigatorParamList>();
 
 const TabNavigator = () => {
   return (
