@@ -1,16 +1,22 @@
-import React from 'react';
-import {StyleSheet, Text, View} from 'react-native';
+import React from "react";
+import { SafeAreaView } from "react-native-safe-area-context";
+
+import IPTracker from './components/IPTracker';
+import Slider from "./components/Slider";
+import { IPInfo } from "../../types";
 
 const IpTrackerScreen = () => {
+  const [collectedIpInfo, setCollectedIpInfo] = React.useState<IPInfo>();
+  const collectIpInfo = (ipInfo: IPInfo) => {
+    setCollectedIpInfo(ipInfo);
+  }
+
   return (
-    <View style={styles.container}>
-      <Text>IpTrackerScreen!</Text>
-    </View>
+    <SafeAreaView>
+      <IPTracker collectIpInfo={collectIpInfo}/>
+      <Slider ipInfo={collectedIpInfo}/>
+    </SafeAreaView>
   );
 };
-
-const styles = StyleSheet.create({
-  container: {flex: 1, justifyContent: 'center', alignItems: 'center'},
-});
 
 export default IpTrackerScreen;
